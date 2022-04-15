@@ -12,6 +12,9 @@ export const Form = (props) => {
 			component='form'
 			onSubmit={onSubmit}
 			spacing={2}
+			sx={{
+				alignItems: 'flex-start',
+			}}
 		>
 			{children}
 		</Stack>
