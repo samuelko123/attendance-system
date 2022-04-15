@@ -1,0 +1,30 @@
+{
+  "name": "attendance-system",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.0",
+    "@mui/lab": "^5.0.0-alpha.77",
+    "@mui/material": "^5.6.0",
+    "axios": "^0.26.1",
+    "mongodb": "^4.5.0",
+    "next": "12.1.4",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-hook-form": "^7.29.0"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.4",
+    "eslint-plugin-import-newlines": "^1.2.2",
+    "eslint-plugin-newline-destructuring": "^1.0.1"
+  }
+}
