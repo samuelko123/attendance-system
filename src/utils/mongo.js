@@ -28,7 +28,7 @@ export async function connectToDatabase() {
 export function convertMongoIdToStr(obj) {
 	if (!obj) {
 		return obj
-	} else if (Array.isArray(obj)){
+	} else if (Array.isArray(obj)) {
 		for (const doc of obj) {
 			doc._id = doc._id.toString()
 		}
@@ -38,3 +38,8 @@ export function convertMongoIdToStr(obj) {
 
 	return obj
 }
+
+export const clientPromise = MongoClient.connect(uri, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+})
