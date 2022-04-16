@@ -14,7 +14,7 @@ export const MenuList = (props) => {
 	} = props
 
 	return (
-		<MuiMenuList disablePadding={true}>
+		<MuiMenuList>
 			{items.map(item =>
 				<Link key={item.label} href={item.href}>
 					<MenuItem
