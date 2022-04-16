@@ -2,9 +2,14 @@ import {
 	connectToDatabase,
 	convertMongoIdToStr,
 } from '../../../utils/mongo'
+import { checkUserOnly } from '../../../utils/middleware'
+import { handleApiError } from '../../../utils/errorHandler'
+import { NotFoundError } from '../../../utils/error'
 
 export default async function handler(req, res) {
 	try {
+		await checkUserOnly(req)
+
 		if (req.method === 'GET') {
 			const data = await getGroups()
 			res.json(data)
@@ -12,10 +17,10 @@ export default async function handler(req, res) {
 			const data = await createGroup(req.body)
 			res.status(200).send(data)
 		} else {
-			res.status(404).send()
+			throw new NotFoundError()
 		}
 	} catch (err) {
-		res.status(500).send(err.message)
+		handleApiError(err, res)
 	}
 }
 

@@ -12,6 +12,7 @@ import HomeIcon from '@mui/icons-material/Home'
 import GroupIcon from '@mui/icons-material/Group'
 import { MenuList } from '../components/MenuList'
 import { AppBar } from '../components/AppBar'
+import { Auth } from '../components/Auth'
 import { Main } from '../components/Main'
 import { theme } from '../styles/theme'
 import '../styles/global.css'
@@ -39,7 +40,7 @@ export default function App(props) {
 	} = props
 
 	const [drawerOpen, setDrawerOpen] = React.useState(false)
-	const toggleDrawerOpen = () => { setDrawerOpen(!drawerOpen) }
+	const toggleDrawerOpen = () => setDrawerOpen(!drawerOpen)
 
 	return (
 		<SessionProvider session={session}>
@@ -72,7 +73,9 @@ export default function App(props) {
 					</Drawer>
 					<Main open={drawerOpen}>
 						<Toolbar />
-						<Component {...pageProps} />
+						<Auth>
+							<Component {...pageProps} />
+						</Auth>
 					</Main>
 				</Box>
 			</ThemeProvider>

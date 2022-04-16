@@ -3,9 +3,14 @@ import {
 	connectToDatabase,
 	convertMongoIdToStr,
 } from '../../../utils/mongo'
+import { checkUserOnly } from '../../../utils/middleware'
+import { handleApiError } from '../../../utils/errorHandler'
+import { NotFoundError } from '../../../utils/error'
 
 export default async function handler(req, res) {
 	try {
+		await checkUserOnly(req, res)
+
 		if (req.method === 'GET') {
 			const { id } = req.query
 			const data = await getGroup(id)
@@ -19,10 +24,10 @@ export default async function handler(req, res) {
 			const data = await deleteGroup(id)
 			res.json(data)
 		} else {
-			res.status(404).send()
+			throw new NotFoundError()
 		}
 	} catch (err) {
-		res.status(500).send(err.message)
+		handleApiError(err, res)
 	}
 }
 
