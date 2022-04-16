@@ -14,6 +14,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from './Link'
 import { SignoutButton } from './Buttons'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 export const AppBar = (props) => {
 	const {
@@ -71,8 +72,14 @@ export const AppBar = (props) => {
 							src={session.user.image}
 							imgProps={{
 								referrerPolicy: 'no-referrer',
+								color: 'primary',
 							}}
-						/>
+							sx={{ bgcolor: 'inherit' }}
+						>
+							<AccountCircleIcon
+								sx={{ fontSize: (theme) => theme.spacing(5) }}
+							/>
+						</Avatar>
 					</IconButton>
 					<Popover
 						open={popOverOpen}
