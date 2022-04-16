@@ -17,7 +17,11 @@ export const MenuList = (props) => {
 		<MuiMenuList disablePadding={true}>
 			{items.map(item =>
 				<Link key={item.label} href={item.href}>
-					<MenuItem onClick={onSelect} divider>
+					<MenuItem
+						onClick={onSelect}
+						divider
+						sx={{ height: (theme) => theme.spacing(6) }}
+					>
 						<ListItemIcon>
 							{item.icon}
 						</ListItemIcon>
