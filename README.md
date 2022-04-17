@@ -1,8 +1,8 @@
-# Attendance System
+# Login System
 
-![GitHub deployments](https://img.shields.io/github/deployments/samuelko123/attendance-system/production?label=vercel&logo=vercel)
-![licence badge](https://img.shields.io/github/license/samuelko123/attendance-system)
+![GitHub deployments](https://img.shields.io/github/deployments/samuelko123/login-system/production?label=vercel&logo=vercel)
+![licence badge](https://img.shields.io/github/license/samuelko123/login-system)
 
-<p>A full-stack project intending to provide attendance tracking functionality.</p>
+<p>An example of using the NextAuth package.</p>
 
-Demo: https://attendance-system-samuel-ko.vercel.app/
+Demo: https://login-system-samuel-ko.vercel.app/

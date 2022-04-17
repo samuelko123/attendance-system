@@ -31,6 +31,7 @@ export default function Page() {
 			{!session &&
 				<Stack spacing={2}>
 					<GoogleSignInButton onClick={() => signIn('google')} />
+					<button onClick={() => signIn('facebook')}>Facebook</button>
 				</Stack>
 			}
 		</>
