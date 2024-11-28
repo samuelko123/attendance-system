@@ -4,5 +4,3 @@
 ![licence badge](https://img.shields.io/github/license/samuelko123/login-system?v=1)
 
 <p>An example of using the NextAuth package.</p>
-
-Demo: https://login-system-samuel-ko.vercel.app/
